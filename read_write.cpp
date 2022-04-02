@@ -59,6 +59,7 @@ void testRead(string filename)
 	inFile.open(filename);
 	Alumno person2;	
 	if(inFile.is_open()){
+		
 		while(!inFile.eof()){
 			inFile >> person2;
 			cout << person2.Nombre;

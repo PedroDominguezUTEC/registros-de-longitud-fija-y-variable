@@ -62,7 +62,7 @@ class FixedRecord
             while (!file.eof())
             {
                 Alumno alumno;  
-                file >> alumno;
+                file.read((char*) &alumno, sizeof(Alumno));
                 todosLosAlumnos.push_back(alumno);
             }
             file.close();
@@ -150,10 +150,10 @@ int main()
     record.add(prueba);
 */
     
-    //Alumno prueba = record.readRecord(51);
-
-    //cout << prueba << endl;
+    Alumno prueba = record.readRecord(0);
     
-    testRead("datos1.txt");
+    cout << prueba.carrera << endl;
+    
+    //testRead("datos1.txt");
     return 0;
 }
